@@ -50,7 +50,7 @@
 
         <v-dialog v-model="isRestartVisible" max-width="500" content-class="rounded-xl">
             <SudokuRestart @difficulty="difficultySelect" @close-dialog="isRestartVisible = false" title="重新开始?"
-            cancel="Continue current game">
+            cancel="继续当前游戏">
                 <p>选择新的难度级别以重新开始</p>
             </SudokuRestart>
         </v-dialog>

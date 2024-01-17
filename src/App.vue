@@ -36,7 +36,7 @@
             <SudokuHelp @close-dialog="isHelpVisible = false" class=""/>
         </v-dialog>
 
-        <v-dialog persistent :value="updateExists" :timeout="-1" color="black" outlined rounded max-width="400">
+        <!-- <v-dialog persistent :value="updateExists" :timeout="-1" color="black" outlined rounded max-width="400">
             <v-card>
                 <v-card-text class="pa-8">
                     <div class="d-flex flex-column align-center">
@@ -56,7 +56,7 @@
                     </div>
                 </v-card-text>
             </v-card>
-        </v-dialog>
+        </v-dialog> -->
     </v-app>
 </template>
 
