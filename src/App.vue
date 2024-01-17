@@ -2,20 +2,19 @@
     <v-app>
         <v-app-bar flat app :dark="$store.state.themeDark" light>
             <div class="d-flex align-center">
-                <sudoku-logo :size="40"/>
+                <sudoku-logo :size="40" v-if="false"/>
                 <span class="headline font-weight-light ml-2 grey--text">Sudoku</span>
-
             </div>
 
             <v-spacer></v-spacer>
             <div class="text-no-wrap">
-                <a v-if="showCoffee"
+                <!-- <a v-if="showCoffee"
                    href="https://www.buymeacoffee.com/matthewroxburgh" target="_blank" rel="noopener noreferrer"
                    class="text-decoration-none">
                     <v-btn icon large class="mr-2">
                         <v-icon>{{ svgIcons.mdiCoffeeToGoOutline}}</v-icon>
                     </v-btn>
-                </a>
+                </a> -->
                 <v-btn @click="togglePause" icon v-show="$route.name === 'GameView'" large class="mr-2">
                     <v-icon>{{ svgIcons.mdiPause }}</v-icon>
                 </v-btn>

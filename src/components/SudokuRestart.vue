@@ -9,13 +9,13 @@
         <v-card-text class="text-center">
             <slot></slot>
             <v-list>
-                <SudokuRestartLevel @difficulty="levelSelect" :level-code="SudokuLevels.EASY"  title="EASY LEVEL"/>
-                <SudokuRestartLevel @difficulty="levelSelect" :level-code="SudokuLevels.MEDIUM"  title="MEDIUM LEVEL"/>
-                <SudokuRestartLevel @difficulty="levelSelect" :level-code="SudokuLevels.HARD"  title="HARD LEVEL"/>
+                <SudokuRestartLevel @difficulty="levelSelect" :level-code="SudokuLevels.EASY"  title="轻松模式"/>
+                <SudokuRestartLevel @difficulty="levelSelect" :level-code="SudokuLevels.MEDIUM"  title="中级模式"/>
+                <SudokuRestartLevel @difficulty="levelSelect" :level-code="SudokuLevels.HARD"  title="困难模式"/>
                 <v-divider/>
             </v-list>
             <div class="text-center mt-5">
-                <v-btn block outlined @click="cancelAction" v-if="cancellable">{{ cancel }}</v-btn>
+                <v-btn rounded block outlined @click="cancelAction" v-if="cancellable">{{ cancel }}</v-btn>
             </div>
         </v-card-text>
     </v-card>

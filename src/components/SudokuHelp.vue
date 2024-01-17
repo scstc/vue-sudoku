@@ -1,22 +1,22 @@
 <template>
     <v-card>
-        <v-card-title class="justify-center headline">Help</v-card-title>
+        <v-card-title class="justify-center headline">帮助</v-card-title>
         <v-card-text class="font-weight-light">
             <v-divider/>
             <v-simple-table>
                 <tbody>
-                <SudokuHelpItem :icon="svgIcons.mdiHelpCircleOutline" title="Help" text="Shows this help"/>
-                <SudokuHelpItem :icon="svgIcons.mdiDotsGrid" title="Automatic notes" text="Fills in all empty squares with the values that are not already in the row, column or block"/>
-                <SudokuHelpItem :icon="svgIcons.mdiRefresh" title="New Game" text="Asks for a new difficulty level and starts a new game "/>
-                <SudokuHelpItem :icon="svgIcons.mdiUndo" title="Undo Move" text="Undoes the last guess or note edit"/>
-                <SudokuHelpItem :icon="svgIcons.mdiEraser" title="Eraser" text="Clears the selected cell"/>
-                <SudokuHelpItem :icon="svgIcons.mdiPause" title="Pause" text="Pauses the game and the timer"/>
-                <SudokuHelpItem :icon="svgIcons.mdiCog" title="Settings" text="Game settings"/>
-                <SudokuHelpItem :icon="svgIcons.mdiCoffeeToGoOutline" title="Buy me a coffee" text="Allows you to mae a small donation to buy me a coffee. There are no ads and you can turn this icon off in the settings."/>
+                <SudokuHelpItem :icon="svgIcons.mdiHelpCircleOutline" title="帮助" text="显示此帮助"/>
+                <SudokuHelpItem :icon="svgIcons.mdiDotsGrid" title="自动笔记" text="用行、列或块中尚未存在的值填充所有空白方块"/>
+                <SudokuHelpItem :icon="svgIcons.mdiRefresh" title="新游戏" text="请求新的难度级别并开始新游戏。"/>
+                <SudokuHelpItem :icon="svgIcons.mdiUndo" title="撤销" text="撤消上次猜测或注释编辑"/>
+                <SudokuHelpItem :icon="svgIcons.mdiEraser" title="橡皮擦" text="清除所选单元格"/>
+                <SudokuHelpItem :icon="svgIcons.mdiPause" title="暂停" text="暂停游戏和计时器"/>
+                <SudokuHelpItem :icon="svgIcons.mdiCog" title="设置" text="游戏设置"/>
+                <!-- <SudokuHelpItem :icon="svgIcons.mdiCoffeeToGoOutline" title="Buy me a coffee" text="Allows you to mae a small donation to buy me a coffee. There are no ads and you can turn this icon off in the settings."/> -->
                 </tbody>
             </v-simple-table>
             <v-divider class="my-4"/>
-            <div class="subtitle-1">Number entry</div>
+            <!-- <div class="subtitle-1">Number entry</div>
             <p>If you select a cell on the grid (highlighted blue) then can use the keypad to enter a guess or make notes into that call. Alternatively if you select a digit on the keypad
                 you can tap on the grid to enter that digit into the cells guess or notes fields.</p>
             <div class="subtitle-1">Notes</div>
@@ -58,18 +58,18 @@
             <p class="grey--text font-weight-light font-italic">{{ version}}</p>
             <div class="justify-center text-center">
                 <v-btn  @click="$emit('close-dialog')">Close</v-btn>
-            </div>
+            </div> -->
 
         </v-card-text>
     </v-card>
 </template>
 <script>
 import SudokuHelpItem from "@/components/SudokuHelpItem.vue";
-import SudokuHelpKey from "@/components/SudokuHelpKey.vue";
+// import SudokuHelpKey from "@/components/SudokuHelpKey.vue";
 
 export default {
     name: 'SudokuHelp',
-    components: {SudokuHelpItem, SudokuHelpKey},
+    components: {SudokuHelpItem},
     computed: {
         version() {
             return `V${process.env.VUE_APP_VERSION} #${process.env.VUE_APP_GIT_HASH}`;

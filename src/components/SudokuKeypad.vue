@@ -38,18 +38,20 @@
                     v-if="allowAutoNotes"
                     color="gray" :small="isSmallButton" @click="autoNotes" @clickx="autoNotes" :icon="svgIcons.mdiDotsGrid"
                     :shortcut="['ctrl', 'alt', 'n']"/>
-            <sudoku-key color="gray" :small="isSmallButton" @click="isRestartVisible = true" :icon="svgIcons.mdiRefresh"
-                        :shortcut="['ctrl', 'alt', 'r']"/>
+            
             <sudoku-key color="gray" :small="isSmallButton" :disabled="historyLength === 0" @click="undo"
                         :icon="svgIcons.mdiUndo" :shortcut="['ctrl', 'z']"/>
             <sudoku-key :color="isValidationOn ? 'secondary' : 'gray'" :small="isSmallButton" @click="toggleNotesMode"
                         :selected="isNotesMode" :icon="svgIcons.mdiPencil" :shortcut="['n']"/>
         </div>
+        <div class="text-center mt-4">
+            <v-btn rounded large block outlined class="mb-6 py-5"   @click="isRestartVisible = true" >重新开始</v-btn>
+        </div>
 
         <v-dialog v-model="isRestartVisible" max-width="500" content-class="rounded-xl">
-            <SudokuRestart @difficulty="difficultySelect" @close-dialog="isRestartVisible = false" title="Restart?"
+            <SudokuRestart @difficulty="difficultySelect" @close-dialog="isRestartVisible = false" title="重新开始?"
             cancel="Continue current game">
-                <p>Select a new difficulty level to restart</p>
+                <p>选择新的难度级别以重新开始</p>
             </SudokuRestart>
         </v-dialog>
 

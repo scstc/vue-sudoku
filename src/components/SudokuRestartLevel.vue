@@ -1,7 +1,7 @@
 <template>
     <div>
         <v-divider/>
-    <v-btn block outlined class="mb-6 py-5" @click="$emit('difficulty', levelCode)">
+    <v-btn block rounded outlined class="mb-6 py-5" @click="$emit('difficulty', levelCode)">
         <div class="star-container">
                 <v-icon color="sudoku" large :key="cnt" v-for="cnt in starCount">{{ svgIcons.mdiStarOutline }}</v-icon>
         </div>

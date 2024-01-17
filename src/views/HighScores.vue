@@ -12,8 +12,8 @@
                     <sudoku-logo v-else :size="128" :rotated="false" :icon="svgIcons.mdiCheckCircleOutline" class="breathe"/>
                 </div>
                 <div class="my-4">
-                    <v-chip outlined large class="px-6" color="black">Your time in {{ level }} mode <span
-                            class="mx-2 grey--text text--lighten-1">&mdash;</span>
+                    <v-chip outlined large class="px-6" color="black">难度：{{ level | formatDifficultyLevel }}，用时： 
+                        <!-- <span class="mx-2 grey--text text--lighten-1">&mdash;</span> -->
                         <elapsed-time :seconds="secondsTaken"/>
                     </v-chip>
                 </div>
@@ -22,7 +22,7 @@
                             hide-delimiter-background hide-delimiters height="360">
                     <v-carousel-item v-for="hLevel in levels" :key="`level-${hLevel}`">
                         <v-sheet elevation="0">
-                            <div class="headline text-capitalize font-weight-light sudoku--text">High Scores - {{ hLevel }} Mode</div>
+                            <div class="headline text-capitalize font-weight-light sudoku--text">排行榜 - {{ hLevel | formatDifficultyLevel }}</div>
                             <v-divider class="mb-2 sudoku"/>
                             <v-simple-table dense style="max-width: 500px" class="mx-auto">
                                 <tbody>
@@ -40,9 +40,9 @@
                         </v-sheet>
                     </v-carousel-item>
                 </v-carousel>
-                <v-btn outlined tabindex="-1" class="mt-4" @click="restart">
-                    <span v-if="solved">Start new game</span>
-                    <span v-else>Resume game</span>
+                <v-btn block outlined tabindex="-1" class="mt-4" @click="restart">
+                    <span v-if="solved">开始新游戏</span>
+                    <span v-else>恢复游戏</span>
                 </v-btn>
             </div>
         </div>
@@ -97,7 +97,7 @@ export default {
             return this.$store.state.secondsTaken;
         },
         praise() {
-            return this.highScore ? 'Congratulations!' : 'Finished'
+            return this.highScore ? '恭喜你!' : '完成'
         }
     }
 }

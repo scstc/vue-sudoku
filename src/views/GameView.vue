@@ -5,11 +5,12 @@
 
         <div v-if="!ready" class="fill-height align-center text-center justify-center d-flex flex-column">
                 <sudoku-logo :size="200" class="breathe" />
-            <v-chip outlined class="font-weight-light px-6 mt-10" large>generating ...</v-chip>
+            <v-chip outlined class="font-weight-light px-6 mt-10" large>正在生成 ...</v-chip>
         </div>
         <v-container v-else class="text-center">
-            <v-chip outlined color="grey" class="my-4" small>Difficulty:
-                <span class="text-capitalize mx-1">{{ level }}</span> <span class="mx-1 grey--text text--lighten-2">&mdash;</span>
+            <v-chip outlined color="grey" class="my-4" small>难度:
+                <span class="text-capitalize mx-1">{{ level }}</span> 
+                <span class="mx-1 grey--text text--lighten-2">&mdash;</span>
                 <elapsed-time :seconds="$store.state.secondsTaken"/>
             </v-chip>
             <v-avatar v-if="showCountdown && countdownClock" :style="countDownStyle"
